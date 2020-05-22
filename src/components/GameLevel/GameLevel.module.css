@@ -1,0 +1,57 @@
+.container {
+  height: 100vh;
+}
+
+.header {
+  position: relative;
+  padding: 100px 0;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.easy {
+  height: 200px;
+  width: 200px;
+  background-color: #ee0005;
+  font-size: 42px;
+  line-height: calc(200px - 42px / 2);
+  color: white;
+  border: none;
+}
+
+.medium {
+  text-align: center;
+  height: 400px;
+  width: 200px;
+  background-color: #ff8300;
+  font-size: 42px;
+  line-height: calc(400px - 42px / 2);
+  color: white;
+  border: none;
+}
+
+.hard {
+  height: 600px;
+  width: 200px;
+  background-color: #dbc500;
+  font-size: 42px;
+  line-height: calc(600px - 42px / 2);
+  color: white;
+  border: none;
+}
+
+/* .edgar {
+  height: 800px;
+  flex-basis: 200px;
+  background-color: #bfe6a8;
+  font-size: 42px;
+  line-height: calc(800px - 42px / 2);
+  color: white;
+} */

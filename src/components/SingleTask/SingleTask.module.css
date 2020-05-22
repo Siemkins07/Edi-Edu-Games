@@ -1,0 +1,37 @@
+.container {
+  height: 100vh;
+  padding-top: 100px;
+}
+
+.input {
+  padding: 10px;
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border: 5px solid black;
+  font-size: 60px;
+  outline: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+
+  font-weight: 700;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn_action {
+  padding: 20px 40px;
+  margin: 10px;
+  /* background: linear-gradient(
+    0deg,
+    rgba(195, 34, 64, 1) 10%,
+    rgba(204, 139, 24, 1) 25%,
+    rgba(222, 227, 14, 1) 40%,
+    rgba(28, 235, 48, 1) 55%,
+    rgba(44, 90, 238, 1) 70%,
+    rgba(230, 45, 253, 1) 85%
+  ); */
+}
