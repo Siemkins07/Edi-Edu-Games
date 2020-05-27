@@ -22,6 +22,7 @@ const Operations = ({ operator, selectOperator }) => {
           <button
             value="subtraction"
             className={styles.operand}
+            onClick={selectOperator}
             style={{ backgroundColor: "green" }}
           >
             -

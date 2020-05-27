@@ -21,19 +21,10 @@ const SingleTask = ({ history, operator }) => {
   const multiplyQuestions = allQuestions.filter((el) => el.type === "multiply");
   const divideQuestions = allQuestions.filter((el) => el.type === "divide");
 
-  console.log("dodawanie", additionQuestions);
-  console.log("odejmowanie", subtractionQuestions);
-
   let mapped = null;
   let select;
 
-  if (operator === "addition") {
-    const randomQuestionId =
-      Math.floor(Math.random() * additionQuestions.length) + 1;
-    const select = additionQuestions.slice(
-      randomQuestionId - 1,
-      randomQuestionId
-    );
+  const mappedFunction = () => {
     mapped = select.map((el) => (
       <div className={styles.div} key={el.id}>
         <span>question nr {el.id}</span>
@@ -52,6 +43,18 @@ const SingleTask = ({ history, operator }) => {
         </h3>
       </div>
     ));
+  };
+
+  if (operator === "addition") {
+    const randomQuestionId =
+      Math.floor(Math.random() * additionQuestions.length) + 1;
+    select = additionQuestions.slice(randomQuestionId - 1, randomQuestionId);
+    mappedFunction();
+  } else if (operator === "subtraction") {
+    const randomQuestionId =
+      Math.floor(Math.random() * subtractionQuestions.length) + 1;
+    select = subtractionQuestions.slice(randomQuestionId - 1, randomQuestionId);
+    mappedFunction();
   }
 
   const handleScoreCheck = (e) => {
