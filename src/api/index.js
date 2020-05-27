@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "addition.json";
+const url = "easy.json";
 
 export const fetchData = async () => {
   try {

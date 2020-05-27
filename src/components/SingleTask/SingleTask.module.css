@@ -16,8 +16,8 @@
 
   font-weight: 700;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -25,13 +25,4 @@ input::-webkit-inner-spin-button {
 .btn_action {
   padding: 20px 40px;
   margin: 10px;
-  /* background: linear-gradient(
-    0deg,
-    rgba(195, 34, 64, 1) 10%,
-    rgba(204, 139, 24, 1) 25%,
-    rgba(222, 227, 14, 1) 40%,
-    rgba(28, 235, 48, 1) 55%,
-    rgba(44, 90, 238, 1) 70%,
-    rgba(230, 45, 253, 1) 85%
-  ); */
 }

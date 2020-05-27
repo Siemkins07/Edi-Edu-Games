@@ -2,16 +2,17 @@ import React from "react";
 import styles from "./Operations.module.css";
 import { Link } from "react-router-dom";
 
-const Operations = (props) => {
+const Operations = ({ operator, selectOperator }) => {
+  console.log(operator);
   return (
     <div className={styles.container}>
       <div className={styles.header}>Select math operation</div>
       <div className={styles.options}>
         <Link to="/single">
           <button
-            value="add"
+            value="addition"
             className={styles.operand}
-            onClick={props.selectOperator}
+            onClick={selectOperator}
             style={{ backgroundColor: "red" }}
           >
             +
@@ -19,7 +20,7 @@ const Operations = (props) => {
         </Link>
         <Link to="/single">
           <button
-            value="sub"
+            value="subtraction"
             className={styles.operand}
             style={{ backgroundColor: "green" }}
           >
@@ -28,7 +29,7 @@ const Operations = (props) => {
         </Link>
         <Link to="/single">
           <button
-            value="multi"
+            value="multiply"
             className={styles.operand}
             style={{ backgroundColor: "magenta" }}
           >

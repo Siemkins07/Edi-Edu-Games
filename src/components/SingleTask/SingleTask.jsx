@@ -1,40 +1,58 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./SingleTask.module.css";
-import { Redirect } from "react-router-dom";
+import { fetchData } from "../../api";
 
-const SingleTask = ({ questions, newQ, history }) => {
-  const allQuestions = questions;
-  const randomQuestionId = Math.floor(Math.random() * allQuestions.length);
-  const select = allQuestions.slice(randomQuestionId, randomQuestionId + 1);
-  console.log(select);
+const SingleTask = ({ history, operator }) => {
+  const [questions, setQuestions] = useState([]);
 
-  // const [fetchedCountries, setFetchedCountries] = useState([]);
+  console.log(operator);
+  useEffect(() => {
+    const fetchApi = async () => {
+      setQuestions(await fetchData());
+    };
+    fetchApi();
+  }, [setQuestions]);
 
-  // useEffect(() => {
-  //   const fetchAPI = async () => {
-  //     setFetchedCountries(await fetchCountries())
-  //   }
-  //   fetchAPI();
-  // }, [setFetchedCountries])
+  const allQuestions = questions; //wszystkie zadania
+  const additionQuestions = allQuestions.filter((el) => el.type === "addition");
+  const subtractionQuestions = allQuestions.filter(
+    (el) => el.type === "subtraction"
+  );
+  const multiplyQuestions = allQuestions.filter((el) => el.type === "multiply");
+  const divideQuestions = allQuestions.filter((el) => el.type === "divide");
 
-  const mapped = select.map((el) => (
-    <div className={styles.div} key={el.id}>
-      <span>question nr {el.id}</span>
-      <p>level {el.level}</p>
-      <br></br>
-      <p>How much does it equal?</p>
-      <h3 style={{ fontSize: "70px" }}>
-        {el.content} =
-        <input
-          onChange={(e) => e.target.value}
-          id="input"
-          className={styles.input}
-          type="number"
-          autoFocus
-        />
-      </h3>
-    </div>
-  ));
+  console.log("dodawanie", additionQuestions);
+  console.log("odejmowanie", subtractionQuestions);
+
+  let mapped = null;
+  let select;
+
+  if (operator === "addition") {
+    const randomQuestionId =
+      Math.floor(Math.random() * additionQuestions.length) + 1;
+    const select = additionQuestions.slice(
+      randomQuestionId - 1,
+      randomQuestionId
+    );
+    mapped = select.map((el) => (
+      <div className={styles.div} key={el.id}>
+        <span>question nr {el.id}</span>
+        <p>type: {el.type}</p>
+        <br></br>
+        <p>How much does it equal?</p>
+        <h3 style={{ fontSize: "70px" }}>
+          {el.content} =
+          <input
+            onChange={(e) => e.target.value}
+            id="input"
+            className={styles.input}
+            type="number"
+            autoFocus
+          />
+        </h3>
+      </div>
+    ));
+  }
 
   const handleScoreCheck = (e) => {
     e.preventDefault();
@@ -58,6 +76,11 @@ const SingleTask = ({ questions, newQ, history }) => {
     }
   };
 
+  const handleNext = async () => {
+    const fetchedData = await fetchData();
+    setQuestions(fetchedData);
+  };
+
   return (
     <div className={styles.container}>
       {mapped}
@@ -71,7 +94,7 @@ const SingleTask = ({ questions, newQ, history }) => {
       <button className={styles.btn_action} onClick={handleFinishGame}>
         Finish
       </button>
-      <button className={styles.btn_action} onClick={newQ}>
+      <button className={styles.btn_action} onClick={handleNext}>
         Next
       </button>
     </div>
