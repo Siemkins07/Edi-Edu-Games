@@ -7,6 +7,7 @@ import {
   Intro,
   SingleTask,
   Drawer,
+  Clicker,
 } from "./components";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { fetchData } from "./api";
@@ -69,6 +70,7 @@ class App extends React.Component {
             )}
           />
           <Route path="/drawer" component={Drawer} />
+          <Route path="/clicker" component={Clicker} />
           <Route
             path="/operations"
             render={(props) => (

@@ -1,0 +1,127 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.leftColumn {
+  flex-basis: 22%;
+}
+
+.centerColumn {
+  flex-grow: 1;
+}
+
+.rightColumn {
+  flex-basis: 22%;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 96%;
+  margin: 0 auto;
+  flex-direction: column;
+  height: 100%;
+}
+
+.btnAdd,
+.btnAddR {
+  border: 6px solid black;
+  padding: 10px 15px;
+  font-size: 40px;
+  min-height: 10vh;
+}
+
+.btnAdd:hover,
+.btnAddR:hover {
+  opacity: 0.6;
+}
+
+.btnAdd:nth-child(1) {
+  background-color: red;
+}
+.btnAdd:nth-child(2) {
+  background-color: orangered;
+}
+.btnAdd:nth-child(3) {
+  background-color: yellow;
+}
+.btnAdd:nth-child(4) {
+  background-color: green;
+}
+.btnAdd:nth-child(5) {
+  background-color: royalblue;
+}
+.btnAddR:nth-child(1) {
+  background-color: purple;
+}
+.btnAddR:nth-child(2) {
+  background: linear-gradient(
+    0deg,
+    rgba(195, 34, 64, 1) 10%,
+    rgba(204, 139, 24, 1) 25%,
+    rgba(222, 227, 14, 1) 40%,
+    rgba(28, 235, 48, 1) 55%,
+    rgba(44, 90, 238, 1) 75%,
+    rgba(230, 45, 253, 1) 90%
+  );
+}
+.btnAddR:nth-child(3) {
+  background-color: hotpink;
+}
+.btnAddR:nth-child(4) {
+  background: linear-gradient(
+    0deg,
+    rgba(208, 214, 212, 1) 25%,
+    rgba(145, 141, 136, 1) 70%,
+    rgba(117, 117, 111, 1) 99%
+  );
+}
+.btnAddR:nth-child(5) {
+  background-color: white;
+  border-color: red;
+}
+
+.passiveBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.square {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -100px;
+}
+
+.center {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  margin: auto auto;
+  line-height: 250px;
+  width: 250px;
+  height: 250px;
+  border: 5px solid black;
+  cursor: pointer;
+  background: #03001e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #fdeff9,
+    #ec38bc,
+    #7303c0,
+    #03001e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #fdeff9,
+    #ec38bc,
+    #7303c0,
+    #03001e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

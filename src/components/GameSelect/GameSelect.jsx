@@ -11,6 +11,9 @@ const GameSelect = () => {
       <div className={styles.container__square}>
         <Link to="/drawer"> Draw me</Link>
       </div>
+      <div className={styles.container__square}>
+        <Link to="/clicker"> Click me!</Link>
+      </div>
     </div>
   );
 };

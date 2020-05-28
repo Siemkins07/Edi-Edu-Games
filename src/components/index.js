@@ -4,3 +4,4 @@ export { default as Intro } from "./Intro/Intro";
 export { default as SingleTask } from "./SingleTask/SingleTask";
 export { default as GameSelect } from "./GameSelect/GameSelect";
 export { default as Drawer } from "./Drawer/Drawer";
+export { default as Clicker } from "./Clicker/Clicker";
